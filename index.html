@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源导航站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>资源导航</h1>
+            <div class="header-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索网站...">
+                    <button id="searchBtn">搜索</button>
+                </div>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="categories" id="categoriesContainer">
+            <!-- 分类将通过JS动态生成 -->
+        </div>
+        
+        <div class="websites" id="websitesContainer">
+            <!-- 网站将通过JS动态生成 -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 资源导航站 | 部署于 Cloudflare Pages</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
