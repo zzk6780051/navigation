@@ -111,6 +111,9 @@
             border: 1px solid var(--border-color);
             border-radius: 10px;
             transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .contact-method:hover {
@@ -148,10 +151,30 @@
 
         footer {
             background-color: var(--card-color);
-            padding: 30px 0;
+            padding: 20px 0;
             border-top: 1px solid var(--border-color);
-            text-align: center;
             color: var(--secondary-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
@@ -166,6 +189,12 @@
             }
             
             .contact-info {
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
                 text-align: center;
             }
         }
@@ -192,7 +221,7 @@
             <div class="contact-card">
                 <h1 class="contact-title">联系方式</h1>
                 <div class="contact-methods">
-                    <div class="contact-method">
+                    <a href="https://t.me/China_zzk_bot" target="_blank" class="contact-method">
                         <div class="contact-icon">
                             <i class="fab fa-telegram"></i>
                         </div>
@@ -200,8 +229,8 @@
                             <div class="contact-name">Telegram</div>
                             <div class="contact-value">@China_zzk.bot</div>
                         </div>
-                    </div>
-                    <div class="contact-method">
+                    </a>
+                    <a href="mailto:zzk@china-zzk.com" class="contact-method">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -209,7 +238,7 @@
                             <div class="contact-name">电子邮箱</div>
                             <div class="contact-value">zzk@china-zzk.com</div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -217,7 +246,12 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 <a href="https://china-zzk.com" style="color: inherit; text-decoration: none;">China_zzk</a></p>
+            <div class="footer-content">
+                <div class="contact-links">
+                    <a href="contact.html">联系方式</a>
+                </div>
+                <p>© 2025 <a href="https://china-zzk.com" style="color: inherit; text-decoration: none;">China_zzk</a></p>
+            </div>
         </div>
     </footer>
 </body>
