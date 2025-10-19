@@ -1,0 +1,32 @@
+{
+  "sites": [
+    {
+      "name": "个人博客",
+      "url": "https://blog.china-zzk.com",
+      "description": "技术分享与个人思考",
+      "category": "China_zzk",
+      "icon": "fas fa-blog"
+    },
+    {
+      "name": "通知站",
+      "url": "https://nitify.china-zzk.com",
+      "description": "重要通知和公告发布",
+      "category": "China_zzk",
+      "icon": "fas fa-bell"
+    },
+    {
+      "name": "热点事件",
+      "url": "https://hotpot.china-zzk.com",
+      "description": "最新热点事件追踪",
+      "category": "China_zzk",
+      "icon": "fas fa-fire"
+    },
+    {
+      "name": "临时邮箱",
+      "url": "https://email.china-zzk.com",
+      "description": "一次性临时邮箱服务",
+      "category": "China_zzk",
+      "icon": "fas fa-envelope"
+    }
+  ]
+}
