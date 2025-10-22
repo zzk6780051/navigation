@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于网站 - China_zzk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --secondary-color: #6a7c92;
+            --background-color: #f8fafc;
+            --card-color: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--card-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        .back-btn {
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .back-btn i {
+            margin-right: 5px;
+        }
+
+        main {
+            flex: 1;
+            padding: 50px 0;
+        }
+
+        .about-card {
+            background-color: var(--card-color);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .about-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .about-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .about-method {
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+
+        .about-method:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .about-icon {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(74, 108, 247, 0.1);
+            border-radius: 15px;
+        }
+
+        .about-info {
+            flex: 1;
+        }
+
+        .about-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .about-desc {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(74, 108, 247, 0.05);
+        }
+
+        .contact-icon {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 30px;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: var(--card-color);
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-color);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .about-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .about-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .about-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-compass"></i>
+                    <span>China_zzk</span>
+                </div>
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    返回首页
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="about-card">
+                <h1 class="about-title">关于网站</h1>
+                <div class="about-methods">
+                    <a href="#" class="about-method" id="contact-owner">
+                        <div class="about-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="about-info">
+                            <div class="about-name">联系所有者</div>
+                            <div class="about-desc">如有问题或建议，请联系网站所有者</div>
+                            <div class="contact-items">
+                                <a href="https://t.me/China_zzk_bot" target="_blank" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-telegram"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <div class="contact-label">Telegram</div>
+                                        <div class="contact-value">@China_zzk.bot</div>
+                                    </div>
+                                </a>
+                                <a href="mailto:zzk@china-zzk.com" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <div class="contact-label">电子邮箱</div>
+                                        <div class="contact-value">zzk@china-zzk.com</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://doc.china-zzk.com" target="_blank" class="about-method">
+                        <div class="about-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="about-info">
+                            <div class="about-name">关于开发者</div>
+                            <div class="about-desc">了解更多关于开发者的信息和技术文档</div>
+                            <div class="contact-items">
+                                <div class="contact-item" style="cursor: default;">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <div class="contact-label">开发者文档</div>
+                                        <div class="contact-value">doc.china-zzk.com</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="about-links">
+                    <a href="about.html">关于网站</a>
+                </div>
+                <p>© 2025 <a href="https://china-zzk.com" style="color: inherit; text-decoration: none;">China_zzk</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 防止联系所有者卡片整体被点击
+        document.getElementById('contact-owner').addEventListener('click', function(e) {
+            if (e.target === this) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

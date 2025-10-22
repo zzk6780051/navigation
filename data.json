@@ -1,4 +1,9 @@
 {
+  "config": {
+    "siteName": "China_zzk",
+    "siteUrl": "https://china-zzk.com",
+    "footerText": "© 2025 China_zzk"
+  },
   "sites": [
     {
       "name": "个人博客",
