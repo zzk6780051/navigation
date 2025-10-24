@@ -36,33 +36,16 @@
             padding: 0 20px;
         }
 
-        /* Turnstile 验证容器样式 */
+        /* 隐藏 Turnstile 验证容器 */
         .turnstile-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1001;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .turnstile-container:hover {
-            opacity: 1;
-        }
-
-        .turnstile-status {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 5px;
-            color: var(--secondary-color);
-        }
-
-        .turnstile-status.verified {
-            color: #10b981;
-        }
-
-        .turnstile-status.error {
-            color: #ef4444;
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
         }
 
         /* 顶部栏 - 桌面模式 */
@@ -459,11 +442,6 @@
                 gap: 15px;
                 text-align: center;
             }
-            
-            .turnstile-container {
-                bottom: 10px;
-                right: 10px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -474,10 +452,9 @@
     </style>
 </head>
 <body>
-    <!-- Turnstile 验证容器 -->
+    <!-- 隐藏的 Turnstile 验证容器 -->
     <div class="turnstile-container">
         <div id="turnstile-widget"></div>
-        <div class="turnstile-status" id="turnstile-status">验证中...</div>
     </div>
 
     <!-- 顶部栏 - 桌面模式 -->
@@ -582,17 +559,13 @@
             turnstile.render('#turnstile-widget', {
                 sitekey: '0x4AAAAAAB8CdxaA96bHoLoq',
                 callback: function(token) {
-                    document.getElementById('turnstile-status').textContent = '验证成功';
-                    document.getElementById('turnstile-status').className = 'turnstile-status verified';
                     console.log('Turnstile验证成功，token:', token);
-                    
                     // 这里可以将token发送到您的服务器进行验证
                     // verifyTokenOnServer(token);
                 },
                 'error-callback': function() {
-                    document.getElementById('turnstile-status').textContent = '验证失败，请刷新页面';
-                    document.getElementById('turnstile-status').className = 'turnstile-status error';
                     console.error('Turnstile验证失败');
+                    // 验证失败时的处理
                 },
                 theme: 'auto'
             });
