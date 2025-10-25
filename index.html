@@ -16,8 +16,8 @@
 
     <title>China_zzk导航站</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Turnstile 脚本 -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+    <!-- 统计脚本 -->
+    <script defer src="https://activity.china-zzk.com/tracker.min.js" data-website-id="导航站"></script>
     <style>
         :root {
             --primary-color: #4a6cf7;
@@ -45,18 +45,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        /* 隐藏 Turnstile 验证容器 */
-        .turnstile-container {
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            opacity: 0;
-            pointer-events: none;
         }
 
         /* 顶部栏 - 桌面模式 */
@@ -463,11 +451,6 @@
     </style>
 </head>
 <body>
-    <!-- 隐藏的 Turnstile 验证容器 -->
-    <div class="turnstile-container">
-        <div id="turnstile-widget"></div>
-    </div>
-
     <!-- 顶部栏 - 桌面模式 -->
     <div class="top-bar">
         <div class="container">
@@ -565,23 +548,6 @@
     </footer>
 
     <script>
-        // Turnstile 验证处理
-        function onTurnstileLoad() {
-            turnstile.render('#turnstile-widget', {
-                sitekey: '0x4AAAAAAB8CdxaA96bHoLoq',
-                callback: function(token) {
-                    console.log('Turnstile验证成功，token:', token);
-                    // 这里可以将token发送到您的服务器进行验证
-                    // verifyTokenOnServer(token);
-                },
-                'error-callback': function() {
-                    console.error('Turnstile验证失败');
-                    // 验证失败时的处理
-                },
-                theme: 'auto'
-            });
-        }
-
         // 等待DOM加载完成
         document.addEventListener('DOMContentLoaded', function() {
             const cardsContainer = document.getElementById('cards-container');
