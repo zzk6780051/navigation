@@ -156,6 +156,13 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .contact-items.expanded {
+            max-height: 200px;
         }
 
         .contact-item {
@@ -257,21 +264,21 @@
             <div class="about-card">
                 <h1 class="about-title">关于网站</h1>
                 <div class="about-methods">
-                    <a href="#" class="about-method" id="contact-owner">
+                    <div class="about-method" id="contact-owner">
                         <div class="about-icon">
                             <i class="fas fa-headset"></i>
                         </div>
                         <div class="about-info">
                             <div class="about-name">联系所有者</div>
                             <div class="about-desc">如有问题或建议，请联系网站所有者</div>
-                            <div class="contact-items">
+                            <div class="contact-items" id="contact-items">
                                 <a href="https://t.me/China_zzk_bot" target="_blank" class="contact-item">
                                     <div class="contact-icon">
                                         <i class="fab fa-telegram"></i>
                                     </div>
                                     <div class="contact-text">
                                         <div class="contact-label">Telegram</div>
-                                        <div class="contact-value">@China_zzk.bot</div>
+                                        <div class="contact-value">@China_zzk_bot</div>
                                     </div>
                                 </a>
                                 <a href="mailto:zzk@china-zzk.com" class="contact-item">
@@ -285,7 +292,7 @@
                                 </a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                     
                     <a href="https://doc.china-zzk.com" target="_blank" class="about-method">
                         <div class="about-icon">
@@ -324,11 +331,17 @@
     </footer>
 
     <script>
-        // 防止联系所有者卡片整体被点击
-        document.getElementById('contact-owner').addEventListener('click', function(e) {
-            if (e.target === this) {
-                e.preventDefault();
-            }
+        // 处理联系所有者卡片的点击事件
+        document.getElementById('contact-owner').addEventListener('click', function() {
+            const contactItems = document.getElementById('contact-items');
+            contactItems.classList.toggle('expanded');
+        });
+
+        // 防止联系方式链接点击时触发卡片折叠/展开
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
         });
     </script>
 </body>

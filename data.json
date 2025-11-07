@@ -13,6 +13,13 @@
       "icon": "fas fa-blog"
     },
     {
+      "name": "开发者文档",
+      "url": "https://doc.china-zzk.com",
+      "description": "个人简介及其项目文档",
+      "category": "China_zzk",
+      "icon": "fas fa-book"
+    },
+    {
       "name": "通知站",
       "url": "https://notify.china-zzk.com",
       "description": "重要通知和公告发布",
