@@ -1,4 +1,4 @@
-name: 自动更新blog/daohang
+name: 自动更新导航站
 
 on:
   push:
@@ -11,25 +11,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: 创建必要的包管理文件
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 准备部署文件
         run: |
-          # 创建最小的 package.json 以避免错误
-          echo '{
-            "name": "navigation",
-            "version": "1.0.0",
-            "description": "",
-            "scripts": {
-              "build": "echo \"No build process needed for static site\""
-            }
-          }' > package.json
-          
-          # 创建 dist 目录并复制文件
-          mkdir -p dist
-          cp index.html about.html dist/ 2>/dev/null || true
-          
-          # 复制 daohang 目录（如果存在）
-          cp -r daohang dist/ 2>/dev/null || true
+          # 创建部署目录结构
+          mkdir -p deploy
+          cp index.html about.html deploy/ 2>/dev/null || true
+          # 复制 daohang 目录
+          cp -r daohang deploy/ 2>/dev/null || true
+          # 复制其他可能的静态资源
+          cp -r css js images deploy/ 2>/dev/null || true
+          echo "部署文件准备完成"
       
       - name: Deploy to Halo
         run: |
-          npx halo-static-pages-deploy-cli deploy -e ${{ secrets.ENDPOINT }} -i ${{ secrets.ID }} -t ${{ secrets.PAT }} -f dist
+          npx halo-static-pages-deploy-cli deploy -e ${{ secrets.ENDPOINT }} -i ${{ secrets.ID }} -t ${{ secrets.PAT }} -f deploy
