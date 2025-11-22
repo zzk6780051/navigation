@@ -1,0 +1,12 @@
+{
+  "name": "navigation-site",
+  "version": "1.0.0",
+  "description": "静态导航网站",
+  "type": "module",
+  "scripts": {
+    "deploy": "echo '使用 GitHub Actions 进行部署'"
+  },
+  "keywords": ["navigation", "static-site"],
+  "author": "China_zzk",
+  "license": "MIT"
+}
