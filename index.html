@@ -19,6 +19,7 @@
     <!-- 统计脚本 -->
     <script defer src="https://activity.china-zzk.com/tracker.min.js" data-website-id="导航站"></script>
     <style>
+        /* 样式保持不变 */
         :root {
             --primary-color: #4a6cf7;
             --secondary-color: #6a7c92;
@@ -516,7 +517,8 @@
             </div>
             <div class="sidebar-section">
                 <h3>导航</h3>
-                <a href="daohang/about.html" class="sidebar-link">
+                <!-- 修改关于页面路径 -->
+                <a href="about.html" class="sidebar-link">
                     <i class="fas fa-info-circle"></i> 关于网站
                 </a>
             </div>
@@ -546,7 +548,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="daohang/about.html">关于网站</a>
+                    <!-- 修改关于页面路径 -->
+                    <a href="about.html">关于网站</a>
                 </div>
                 <p id="footer-text">© 2025 China_zzk</p>
             </div>
@@ -653,8 +656,8 @@
                 });
             });
 
-            // 从daohang/data.json加载数据
-            fetch('./daohang/data.json')
+            // 修改数据文件路径为当前目录的data.json
+            fetch('data.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('网络响应不正常');
