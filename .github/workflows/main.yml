@@ -10,17 +10,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build
-        run: pnpm build
+      
+      - name: 创建必要的包管理文件
+        run: |
+          # 创建最小的 package.json 以避免错误
+          echo '{
+            "name": "navigation",
+            "version": "1.0.0",
+            "description": "",
+            "scripts": {
+              "build": "echo \"No build process needed for static site\""
+            }
+          }' > package.json
+          
+          # 创建 dist 目录并复制文件
+          mkdir -p dist
+          cp index.html about.html dist/ 2>/dev/null || true
+          
+          # 复制 daohang 目录（如果存在）
+          cp -r daohang dist/ 2>/dev/null || true
+      
       - name: Deploy to Halo
         run: |
           npx halo-static-pages-deploy-cli deploy -e ${{ secrets.ENDPOINT }} -i ${{ secrets.ID }} -t ${{ secrets.PAT }} -f dist
