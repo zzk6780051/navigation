@@ -3,21 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-99SM45Y9W5"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-99SM45Y9W5');
-    </script>
 
     <title>China_zzk导航站</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- 统计脚本 -->
-    <script defer src="https://activity.china-zzk.com/tracker.min.js" data-website-id="导航站"></script>
     <style>
         :root {
             --primary-color: #4a6cf7;
@@ -516,7 +504,7 @@
             </div>
             <div class="sidebar-section">
                 <h3>导航</h3>
-                <a href="about.html" class="sidebar-link">
+                <a href="daohang/about.html" class="sidebar-link">
                     <i class="fas fa-info-circle"></i> 关于网站
                 </a>
             </div>
@@ -546,7 +534,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="about.html">关于网站</a>
+                    <a href="daohang/about.html">关于网站</a>
                 </div>
                 <p id="footer-text">© 2025 China_zzk</p>
             </div>
@@ -654,7 +642,7 @@
             });
 
             // 从data.json加载数据
-            fetch('./data.json')
+            fetch('./daohang/data.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('网络响应不正常');
