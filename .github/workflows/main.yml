@@ -3,6 +3,7 @@ name: 自动更新导航站
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
